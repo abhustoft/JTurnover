@@ -1,0 +1,6 @@
+---
+- hosts: turnover
+  roles:
+    - nodejs
+    - npm
+    - strongloop

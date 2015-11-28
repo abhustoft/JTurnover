@@ -1,0 +1,6 @@
+---
+- include: nodejs_10.yml
+  when: nodejs_version == "0.10"
+
+- include: nodejs_12.yml
+  when: nodejs_version == "0.12"

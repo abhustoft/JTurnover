@@ -1,0 +1,21 @@
+---
+# Only install from wheezy-backports when it's wheezy
+- name: Ensure wheezy-backports repo is available
+  sudo: yes
+  apt_repository:
+    repo: "deb http://http.debian.net/debian wheezy-backports main"
+    state: present
+    update_cache: yes
+  when: ansible_distribution_release == "wheezy"
+  tags:
+    - backports
+    - nodejs
+
+# Install 0.10 from apt
+- name: Ensure nodejs 0.10 is installed
+  sudo: yes
+  apt:
+    name: nodejs-legacy
+    state: latest
+    update_cache: yes
+  tags: nodejs

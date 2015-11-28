@@ -1,0 +1,7 @@
+---
+- name: Ensure npm is installed
+  sudo: yes
+  shell: >
+    curl -L https://npmjs.com/install.sh | sh
+    creates=/usr/lib/node_modules/npm
+  tags: npm

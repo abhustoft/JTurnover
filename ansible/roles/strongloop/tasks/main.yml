@@ -1,0 +1,7 @@
+---
+- name: Install strongloop package
+  npm: >
+    name=strongloop
+    state=present
+    global=yes
+  tags: strongloop
