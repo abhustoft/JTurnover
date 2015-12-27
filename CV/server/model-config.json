@@ -32,8 +32,8 @@
     "dataSource": "db",
     "public": false
   },
-  "dayTurnover": {
-    "dataSource": "db",
+  "JobExperience": {
+    "dataSource": "mongoDS",
     "public": true
   }
 }

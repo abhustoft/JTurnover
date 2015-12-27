@@ -1,20 +1,26 @@
 {
-  "name": "dayTurnover",
+  "name": "JobExperience",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "value": {
-      "type": "number",
+    "company": {
+      "type": "string",
       "required": true
     },
-    "date": {
-      "type": "date",
+    "start": {
+      "type": "date"
+    },
+    "end": {
+      "type": "date"
+    },
+    "description": {
+      "type": "string",
       "required": true
     },
-    "store": {
+    "title": {
       "type": "string",
       "required": true
     }

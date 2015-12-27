@@ -19,7 +19,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       turnover.vm.provider "virtualbox" do |vb|
            # Don't boot with headless mode
            vb.gui = false
-           vb.name = "turnoverVM"
+           vb.name = "turnoverVMmac"
 
            # Use VBoxManage to customize the VM. For example to change memory:
            # vb.customize ["modifyvm", :id, "--memory", "1024"]
@@ -29,9 +29,16 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
           ansible.playbook = "./ansible/turnover.yml"
       end
 
-      turnover.vm.provision "shell" do |s|
-          s.inline = "npm install -g strongloop"
-      end
+      #### Node 0.12 install:
+      # Note the new setup script name for Node.js v0.12
+      #curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
+
+      # Then install with:
+      #sudo apt-get install -y nodejs
+
+      #turnover.vm.provision "shell" do |s|
+      #    s.inline = "npm install -g strongloop"
+      #end
 
     end
 
